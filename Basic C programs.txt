@@ -1,0 +1,448 @@
+﻿Q. Swap two numbers without using third variable
+#include<stdio.h>    
+int main()    
+{    
+ int n1=0,n2=1,n3,i,number;    
+ printf("Enter the number of elements:");    
+ scanf("%d",&number);    
+ printf("\n%d %d",n1,n2);//printing 0 and 1    
+ for(i=2;i<number;++i)//
+ {    
+  n3=n1+n2;    
+  printf(" %d",n3);    
+  n1=n2;    
+  n2=n3;    
+ }  
+  return 0;  
+ }
+—------------------------------------------------------------------------
+Q. Factorial of a number
+#include<stdio.h>  
+int main()    
+{    
+ int i,fact=1,number;    
+ printf("Enter a number: ");    
+  scanf("%d",&number);    
+    for(i=1;i<=number;i++){    
+      fact=fact*i;    
+  }    
+  printf("Factorial of %d is: %d",number,fact);    
+return 0;  
+} 
+
+
+Q. Factorial using Recursion
+#include<stdio.h>  
+long factorial(int n)  
+{  
+  if (n == 0)  
+    return 1;  
+  else  
+    return(n * factorial(n-1));  
+}  
+   
+void main()  
+{  
+  int number;  
+  long fact;  
+  printf("Enter a number: ");  
+  scanf("%d", &number);   
+   
+  fact = factorial(number);  
+  printf("Factorial of %d is %ld\n", number, fact);  
+  return 0;  
+}
+—-----------------------------------------------------------------
+Q. Fibonacci Sequence upto  n terms
+#include<stdio.h>    
+int main()    
+{    
+ int n1=0,n2=1,n3,i,number;    
+ printf("Enter the number of elements:");    
+ scanf("%d",&number);    
+ printf("\n%d %d",n1,n2);//printing 0 and 1    
+ for(i=2;i<number;++i)  
+ {    
+  n3=n1+n2;    
+  printf(" %d",n3);    
+  n1=n2;    
+  n2=n3;    
+ }  
+  return 0;  
+ }
+
+
+Q. Fibonacci Sequence using Recursion
+#include<stdio.h>    
+void printFibonacci(int n){    
+    static int n1=0,n2=1,n3;    
+    if(n>0){    
+         n3 = n1 + n2;    
+         n1 = n2;    
+         n2 = n3;    
+         printf("%d ",n3);    
+         printFibonacci(n-1);    
+    }    
+}    
+int main(){    
+    int n;    
+    printf("Enter the number of elements: ");    
+    scanf("%d",&n);    
+    printf("Fibonacci Series: ");    
+    printf("%d %d ",0,1);    
+    printFibonacci(n-2);//n-2 because 2 numbers are already printed    
+  return 0;  
+ } 
+
+
+—------------------------------------------------------------------------
+Q. Print “Hello” without using semicolon 
+#include<stdio.h>  
+ int main()    
+{    
+ if(printf("hello world")){}
+switch(printf("hello world")){} 
+while(!printf("hello world")){}   
+return 0;  
+}
+—-----------------------------------------------------------------
+
+
+
+
+Q. Palindrome check
+#include<stdio.h>  
+int main()    
+{    
+int n,r,sum=0,temp;    
+printf("enter the number=");    
+scanf("%d",&n);    
+temp=n;    
+while(n>0)    
+{    
+r=n%10;    
+sum=(sum*10)+r;    
+n=n/10;    
+}    
+if(temp==sum)    
+printf("palindrome number ");    
+else    
+printf("not palindrome");   
+return 0;  
+}
+
+
+—-----------------------------------------------------------------
+
+
+Q. Armstrong Number 
+#include <stdio.h>
+int main() {
+    int num, originalNum, remainder, result = 0;
+    printf("Enter a three-digit integer: ");
+    scanf("%d", &num);
+    originalNum = num;
+
+
+    while (originalNum != 0) {
+        remainder = originalNum % 10;
+       result += remainder * remainder * remainder;
+       originalNum /= 10;
+    }
+
+
+    if (result == num)
+        printf("%d is an Armstrong number.", num);
+    else
+        printf("%d is not an Armstrong number.", num);
+
+
+   return 0;
+}
+—------------------------------------------------------------------------
+Q. C program without main()
+#include<stdio.h>    
+ #define start main    
+void start() {    
+   printf("Hello");    
+}
+—-----------------------------------------------------------------
+Q. Prime numbers between a range 
+#include <stdio.h>
+
+
+int main() {
+   int low, high, i, flag;
+   printf("Enter two numbers(intervals): ");
+   scanf("%d %d", &low, &high);
+   printf("Prime numbers between %d and %d are: ", low, high);
+
+
+   while (low < high) {
+      flag = 0;
+
+
+      // ignore numbers less than 2
+      if (low <= 1) {
+         ++low;
+         continue;
+      }
+
+
+      // if low is a non-prime number, flag will be 1
+      for (i = 2; i <= low / 2; ++i) {
+
+
+         if (low % i == 0) {
+            flag = 1;
+            break;
+         }
+      }
+
+
+      if (flag == 0)
+         printf("%d ", low);
+      // to check prime for the next number
+      // increase low by 1
+      ++low;
+   }
+   return 0;
+}
+—-----------------------------------------------------------------
+Q. Sum of digits
+#include<stdio.h>  
+ int main()    
+{    
+int n,sum=0,m;    
+printf("Enter a number:");    
+scanf("%d",&n);    
+while(n>0)    
+{    
+m=n%10;    
+sum=sum+m;    
+n=n/10;    
+}    
+printf("Sum is=%d",sum);    
+return 0;  
+}
+—-------------------------------------------------------------------------
+Q. Reverse a Number 
+#include <stdio.h>
+int main() {
+
+
+  int n, reverse = 0, remainder;
+  printf("Enter an integer: ");
+  scanf("%d", &n);
+
+
+  while (n != 0) {
+    remainder = n % 10;
+    reverse = reverse * 10 + remainder;
+    n /= 10;
+  }
+  printf("Reversed number = %d", reverse);
+
+
+  return 0;
+}
+Q. Reverse a sentence using Recursion
+#include <stdio.h>
+void reverseSentence();
+int main() {
+    printf("Enter a sentence: ");
+    reverseSentence();
+    return 0;
+}
+void reverseSentence() {
+    char c;
+    scanf("%c", &c);
+    if (c != '\n') {
+        reverseSentence();
+        printf("%c", c);
+    }
+}
+—-----------------------------------------------------------------
+Q. GCD of two numbers
+#include <stdio.h>
+int main()
+{
+    int n1, n2, i, gcd;
+    printf("Enter two integers: ");
+    scanf("%d %d", &n1, &n2);
+
+
+    for(i=1; i <= n1 && i <= n2; ++i)
+    {
+        // Checks if i is factor of both integers
+        if(n1%i==0 && n2%i==0)
+            gcd = i;
+    }
+    printf("G.C.D of %d and %d is %d", n1, n2, gcd);
+
+
+    return 0;
+}
+
+
+
+
+Q. GCD using Recursion
+#include <stdio.h>
+int hcf(int n1, int n2);
+int main() {
+    int n1, n2;
+    printf("Enter two positive integers: ");
+    scanf("%d %d", &n1, &n2);
+    printf("G.C.D of %d and %d is %d.", n1, n2, hcf(n1, n2));
+    return 0;
+}
+int hcf(int n1, int n2) {
+    if (n2 != 0)
+        return hcf(n2, n1 % n2);
+    else
+        return n1;
+}
+—-----------------------------------------------------------------
+Q. LCM of two numbers
+#include <stdio.h>
+
+
+int main() {
+
+
+    int n1, n2, max;
+
+
+    printf("Enter two positive integers: ");
+    scanf("%d %d", &n1, &n2);
+
+
+    // maximum number between n1 and n2 is stored in max
+    max = (n1 > n2) ? n1 : n2;
+
+
+    while (1) {
+        if ((max % n1 == 0) && (max % n2 == 0)) {
+            printf("The LCM of %d and %d is %d.", n1, n2, max);
+            break;
+        }
+        ++max;
+    }
+    return 0;
+}
+—-----------------------------------------------------------------
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Q. Sorting in Ascending order
+#include <stdio.h>    
+int main()    
+{        
+    int arr[] = {5, 2, 8, 7, 1};     
+    int temp = 0;       
+    int length = sizeof(arr)/sizeof(arr[0]);
+    
+    printf("Elements of original array: \n");    
+    for (int i = 0; i < length; i++) {     
+        printf("%d ", arr[i]);     
+    }        
+    for (int i = 0; i < length; i++) {     
+        for (int j = i+1; j < length; j++) {     
+           if(arr[i] > arr[j]) {    
+               temp = arr[i];    
+               arr[i] = arr[j];    
+               arr[j] = temp;    
+           }     
+        }     
+    }    
+    printf("\n");     
+    //Displaying elements of array after sorting    
+    printf("Elements of array sorted in ascending order: \n");    
+    for (int i = 0; i < length; i++) {     
+        printf("%d ", arr[i]);    
+    }    
+    return 0;    
+}
+—-----------------------------------------------------------------------Q. Linear Search (Time Complexity: O(n))
+#include <stdio.h>
+
+
+int search(int array[], int n, int x) {
+  
+  // Going through array sequentially
+  for (int i = 0; i < n; i++)
+    if (array[i] == x)
+      return i;
+  return -1;
+}
+
+
+int main() {
+  int array[] = {2, 4, 0, 1, 9};
+  int x = 1;
+  int n = sizeof(array) / sizeof(array[0]);
+
+
+  int result = search(array, n, x);
+
+
+  (result == -1) ? printf("Element not found") : printf("Element found at index: %d", result);
+}
+—-----------------------------------------------------------------
+
+
+Q. Half Triangle pattern
+#include <stdio.h>
+int main() {
+   int i, j, rows;
+   printf("Enter the number of rows: ");
+   scanf("%d", &rows);
+   for (i = 1; i <= rows; ++i) {
+      for (j = 1; j <= i; ++j) {
+         printf("* ");
+      }
+      printf("\n");
+   }
+   return 0;
+}
+
+
+Q. Full Pyramid of ***
+#include <stdio.h>
+int main() {
+   int i, space, rows, k = 0;
+   printf("Enter the number of rows: ");
+   scanf("%d", &rows);
+   for (i = 1; i <= rows; ++i, k = 0) {
+      for (space = 1; space <= rows - i; ++space) {
+         printf("  ");
+      }
+      while (k != 2 * i - 1) {
+         printf("* ");
+         ++k;
+      }
+      printf("\n");
+   }
+   return 0;
+}
+—-----------------------------------------------------------------
