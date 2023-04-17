@@ -1,4 +1,8 @@
-﻿Q. Swap two numbers without using third variable
+## Name-Raju Kumar Yadav
+## M.Tech ECE(MICROELECTRONICS)
+## INDIAN INSTITUTE OF INFORMATION TECHNOLOGY ALLAHABAD UTTARPRADESH
+
+Q. Swap two numbers without using third variable
 #include<stdio.h>    
 int main()    
 {    
